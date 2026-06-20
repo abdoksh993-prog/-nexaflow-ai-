@@ -1,0 +1,114 @@
+# NexaFlow AI SaaS Ready Scaffold
+
+This is the next version of your NexaFlow AI platform. It is built so real customers can start using the service after you add your API keys and connect the external services.
+
+## What is included
+
+### Real backend
+- Express API server
+- PostgreSQL database
+- JWT login
+- Password hashing
+- Customer/business accounts
+- Lead storage
+- Conversation storage
+- AI chat endpoint
+- Admin dashboard API
+- Stripe checkout endpoint
+- Twilio webhook starter
+- GoHighLevel sync starter
+- n8n webhook starter
+
+### Real frontend
+- Landing page
+- Live AI chat demo
+- Customer signup/login
+- Customer dashboard
+- Lead pipeline
+- Conversations view
+- Business settings page
+- Pricing checkout buttons
+
+### Deployment
+- Dockerfile
+- Render config
+- SQL schema
+- Seed script
+- Environment template
+
+## What is still required before selling
+
+You must add real credentials:
+- OpenAI API key
+- PostgreSQL database URL
+- Stripe keys and price IDs
+- Twilio keys and phone number
+- GoHighLevel API key, if you want GHL sync
+- n8n webhook URL, if you want automations
+
+## Local setup
+
+```bash
+npm install
+cp .env.example .env
+```
+
+Create a PostgreSQL database called `nexaflow`, then run:
+
+```bash
+npm run db:init
+npm run db:seed
+npm run dev
+```
+
+Frontend:
+
+```txt
+http://localhost:5173
+```
+
+Backend:
+
+```txt
+http://localhost:8080
+```
+
+## Demo login
+
+After seeding:
+
+```txt
+Email: demo@nexaflow.ai
+Password: demo1234
+```
+
+## Deploy on Render
+
+1. Create a PostgreSQL database on Render.
+2. Create a Web Service.
+3. Build command:
+
+```bash
+npm install && npm run build && npm run db:init
+```
+
+4. Start command:
+
+```bash
+npm start
+```
+
+5. Add environment variables from `.env.example`.
+
+## Customer usable status
+
+This is a production-style scaffold. Customers can:
+- Create/login to account
+- Use the chat agent
+- Store leads
+- View dashboard
+- See conversations
+- Submit contact forms
+- Start Stripe checkout after price IDs are added
+
+External systems like Twilio, Stripe, GoHighLevel, and n8n require real credentials to go fully live.
